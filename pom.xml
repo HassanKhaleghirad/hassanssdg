@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>myUssd-g</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <guava.version>18.0</guava.version>
+        <dep.dir>${project.basedir}/src/deps</dep.dir>
+        <sctp.version>2.0.0-166</sctp.version>
+        <asn.version>2.2.0-143</asn.version>
+        <stream.version>1.0.0.CR1</stream.version>
+        <commons.version>1.0.0.CR1</commons.version>
+        <concurrent.version>1.3.4</concurrent.version>
+        <javolution.version>5.5.1</javolution.version>
+        <netty.version>4.0.56.Final</netty.version>
+        <ss7.version>8.0.0-179</ss7.version>
+        <log4j.version>1.2.14</log4j.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.0.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>3.0.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kernol-info</groupId>
+            <artifactId>advancedcontroller-spring-boot-starter</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.2.5.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.1</version>
+            <scope>test</scope>
+
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.2.5.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20211205</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-netflix-eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+            <version>1.1.2.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20211205</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.congestion</groupId>
+            <artifactId>congestion</artifactId>
+            <version>${ss7.version}</version>
+            <!--<scope>system</scope>
+            <systemPath>${dep.dir}/restcomm-congestion.jar</systemPath>-->
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.ss7ext</groupId>
+            <artifactId>ss7-ext-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.map</groupId>
+            <artifactId>map-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.map</groupId>
+            <artifactId>map-impl</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.sccp</groupId>
+            <artifactId>sccp-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.sccp</groupId>
+            <artifactId>sccp-impl</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mobicents.protocols.asn/asn -->
+        <dependency>
+            <groupId>org.mobicents.protocols.asn</groupId>
+            <artifactId>asn</artifactId>
+            <version>2.2.0-143</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.tcap</groupId>
+            <artifactId>tcap-impl</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.tcap</groupId>
+            <artifactId>tcap-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.mtp</groupId>
+            <artifactId>mtp-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.mtp</groupId>
+            <artifactId>mtp</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.m3ua</groupId>
+            <artifactId>m3ua-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.m3ua</groupId>
+            <artifactId>m3ua-impl</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.isup</groupId>
+            <artifactId>isup-api</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.restcomm.protocols.ss7.isup</groupId>
+            <artifactId>isup-impl</artifactId>
+            <version>${ss7.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mobicents.protocols.stream</groupId>
+            <artifactId>stream</artifactId>
+            <version>${stream.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mobicents.commons</groupId>
+            <artifactId>commons</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>concurrent</groupId>
+            <artifactId>concurrent</artifactId>
+            <version>${concurrent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javolution</groupId>
+            <artifactId>javolution</artifactId>
+            <version>${javolution.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+
+
+
+
+    </dependencies>
+
+
+</project>
